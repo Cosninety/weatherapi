@@ -28,10 +28,13 @@ p{
 
 	img{
 		width:100%;
+
 	}
 </style>
 <script>
-// $(window).load(function(){
+
+// $( document ).ready( $('#location').attr("placeholder","Ann Arbor"))
+	// <script> $('#location').attr("placeholder","Ann Arbor");
 
 
     function gettingJSON(){
@@ -91,12 +94,24 @@ p{
 						 var ext = 'https://openweathermap.org/img/wn/'
 						 var typef = "@2x.png"
 						 $('#tempImg').attr("src",ext+json.weather[0]['icon']+typef);
+			 console.log(json.weather[0]['icon'].slice(-1))
+							dORn = json.weather[0]['icon'].slice(-1)
+
+						 if(dORn== 'd'){
+							 	$('img').css('background-color', 'white');
+								console.log("Day time")
+						 }else{
+							 $('img').css('background-color', 'black');
+							 console.log("Night time")
+						 }
+
+
+
+
 
 		          // console.log("stringify returns " + JSON.stringify(json));
 		    })
     }
-
-		$('#location').attr("placeholder","Ann Arbor");
     </script>
 </head>
 <body>
@@ -118,6 +133,6 @@ p{
 		<p>The high today will be <span id = "high"></span> and the low will be <span id = "low"></span>.</p>
 	</div>
 
-	<!-- <script> $('#location').attr("placeholder","Ann Arbor");  </script> -->
+
 </body>
 </html>
