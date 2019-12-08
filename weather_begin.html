@@ -33,9 +33,9 @@ p{
 </style>
 <script>
 
-// $( document ).ready( $('#location').attr("placeholder","Ann Arbor"))
-	// <script> $('#location').attr("placeholder","Ann Arbor");
-
+window.onload = function PlaceFunction(){
+	$('#location').attr("placeholder","Ann Arbor")
+}
 
     function gettingJSON(){
 
@@ -104,11 +104,6 @@ p{
 							 $('img').css('background-color', 'black');
 							 console.log("Night time")
 						 }
-
-
-
-
-
 		          // console.log("stringify returns " + JSON.stringify(json));
 		    })
     }
@@ -132,7 +127,6 @@ p{
 		<p>The temperature in <span id = "loc"></span> is currently <span id = "temp"></span>.</p>
 		<p>The high today will be <span id = "high"></span> and the low will be <span id = "low"></span>.</p>
 	</div>
-
 
 </body>
 </html>
